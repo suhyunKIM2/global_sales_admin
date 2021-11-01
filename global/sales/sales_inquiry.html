@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xml:lang="ko" lang="ko" class="no-js">
+<head>
+<link href="/css/reset.css" type="text/css" rel="stylesheet">
+<link href="/css/common.css" type="text/css" rel="stylesheet">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/common.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js"></script>
+<meta charset="utf-8">
+<script>
+    $(document).ready(function(){
+        setDateBox();
+    });    
+ 
+    // select box 연도 , 월 표시
+    function setDateBox(){
+        var dt = new Date();
+        var year = "";
+        var com_year = dt.getFullYear();
+        // 발행 뿌려주기
+        $("#YEAR").append("<option value=''>년</option>");
+        // 올해 기준으로 -1년부터 +5년을 보여준다.
+        for(var y = (com_year-10); y <= (com_year+5); y++){
+            $("#YEAR").append("<option value='"+ y +"'>"+ y + " 년" +"</option>");
+        }
+        // 월 뿌려주기(1월부터 12월)
+        var month;
+        $("#MONTH").append("<option value=''>월</option>");
+        for(var i = 1; i <= 12; i++){
+            $("#MONTH").append("<option value='"+ i +"'>"+ i + " 월" +"</option>");
+        }
+    }
+ 
+ 
+ jQuery(document).ready(function() {
+   jQuery(".main-table").clone(true).appendTo('#table-scroll').addClass('clone');   
+ });
+</script>
+
+
+<style>
+.content_table{visibility: hidden;opacity: 0;}
+.bottom_buttons {
+    display: inline-block;
+    width: 100%;
+    float: right;
+    text-align: right;
+}
+.btn_save {
+    width: 55px;
+    background-color: #2f2f2f;
+    color: #fff;
+}
+.btn_cancle {
+    margin-left: 3px;
+    width: 55px;
+    border: 1px solid #2f2f2f;
+    color: #2f2f2f;
+}
+.content_ table.bid_write_table tr td ul li{display: inline-block;width:48%;text-align: center;}
+.content_ table.bid_write_table tr td ul span{width:20%;text-align: center;}
+input[type="date"], input[type="time"]{width:47%;text-align: center;}
+.input_id,input[name="pwd"], input[name="N_Phone"]{width:30%;}
+
+.table-scroll {
+    clear: both;
+	position:relative;
+	max-width:1200px;
+	margin:auto;
+	overflow:hidden;
+	border:1px solid #000;
+}
+.table-wrap {
+	width:100%;
+	overflow:auto;
+}
+.content_table .table-scroll table {
+	width:100%;
+	margin:auto;
+	border-collapse:separate;
+	border-spacing:0;
+    padding:0;
+}
+.content_table .table-scroll th, .table-scroll td {
+	padding:0;
+	white-space:nowrap;
+}
+.table-scroll thead, .table-scroll tfoot {
+	background:#f9f9f9;
+}
+.clone {
+	position:absolute;
+	top:0;
+	left:0;
+	pointer-events:none;
+}
+.clone th, .clone td {
+	visibility:hidden
+}
+.clone td, .clone th {
+	border-color:transparent
+}
+.clone tbody th {
+	visibility:visible;
+	color:red;
+}
+.clone .fixed-side {
+	border:1px solid #dfdfdf;
+	background:#f5f5f5;
+	visibility:visible;
+    color:#000;
+}
+.clone thead, .clone tfoot{background:transparent;}
+
+
+@media screen and (max-width: 980px){
+input[name="pwd"], input[name="N_Phone"] {
+    width: 51%;
+}
+}
+@media screen and (max-width: 925px){
+.content_ table.bid_write_table tr td ul li input[id="date_1"],.content_ table.bid_write_table tr td ul li input[id="date_2"]{width:31%;}
+.content_ table.bid_write_table tr td ul li select.hour,.content_ table.bid_write_table tr td ul li select.minute{width:25%;}
+}
+@media screen and (max-width: 720px){
+.content_ table.bid_write_table tr td ul li{width:100%;display:block;}
+.content_ table.bid_write_table tr td ul span{width:100%;display: block;}
+}
+</style>
+</head>
+
+<body>
+    <header role="header" data-include="/global/header.html"></header>
+    <div class="content_ content_table">
+        <div class="ux_info_top">
+            <ul class="select_right_ul">
+                <li>
+                    <select>
+                        <option>마스터 관리</option>
+                        <option>국가 관리</option>
+                        <option>매장 관리</option>
+                        <option>권한 관리</option>
+                    </select>
+                </li>
+                <li>
+                    <select>
+                        <option>매출 관리</option>
+                        <option>매출 조회</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <h2>매출 조회</h2>
+        <div class="select_date">
+            <select name="YEAR" id="YEAR" title="년도" class="select w80"></select>    
+            <select name="MONTH" id="MONTH" title="월" class="select w80"></select>
+            <select name="nation" id="nation" title="국가" class="nation">
+                <option value="국가 state">국가</option>
+                <option value="홍콩">홍콩</option>
+                <option value="">일본</option>
+            </select>
+            <a class="btn btn_confirm_duplication" href="" style="background:#0c66b3;border:1px solid #0c66b3;">Search</a>
+        </div>
+        <div class="Excel_btn" onClick="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2906.28 3265.95" style="height:23px;vertical-align: text-bottom;margin-right:5px;"><defs><style>.cls-01{isolation:isolate;}.cls-02{fill:#e6e6e6;}.cls-03{mix-blend-mode:soft-light;}.cls-04{fill:#f4f4f4;}.cls-05{fill:#35b158;}.cls-06{fill:#0b7623;}.cls-07{fill:#fffefc;}</style></defs><g class="cls-01"><g id="레이어_2" data-name="레이어 2"><g id="Livello_6" data-name="Livello 6"><path class="cls-02" d="M2049.1,0H571.6C444.06,0,339.7,104.35,339.7,231.9V3034c0,127.55,104.36,231.91,231.9,231.91H2674c127.55,0,231.9-104.36,231.9-231.91V866.2Z"/><path class="cls-03" d="M2048.64.05,1945.82,799.59c0,127.55,104.35,231.91,231.89,231.91l728.57-163L2048.73,0A.05.05,0,0,0,2048.64.05Z"/><path class="cls-04" d="M2049.75.12l1.55,633.23c0,127.55,104.36,231.9,231.91,231.9l623.07,1.27Z"/><path class="cls-05" d="M.44,1185.84V2384.51c1.78,0,3.56-.12,5.35-.12H2640.72V1185.7H5.79C4,1185.7,2.22,1185.8.44,1185.84Z"/><polygon class="cls-06" points="0 2385.06 339.98 2662.09 339.98 2384.51 0 2385.06"/><path class="cls-07" d="M835.76,1774.34l218.5,391.27H901.82L768.43,1903.92l-26.68-57.17-27.94,57.17L583,2165.61H431.79l214.69-391.27L436.87,1403.39H589.31l128.31,249,24.13,57.17,26.68-57.17,128.31-249h149.9Z"/><path class="cls-07" d="M1149.53,2165.61V1403.39H1275.3v650.43h335.37v111.79Z"/><path class="cls-07" d="M1747.86,1992.84a276.88,276.88,0,0,0,55.89,36.84q25.41,14,61,25.41t78.76,11.43q66,0,95.28-29.21t29.22-76.23q0-21.58-5.72-38.74t-22.23-32.4q-16.51-15.24-46.37-29.22t-76.85-29.21q-59.73-19.07-102.9-40t-71.78-47.64q-28.58-26.67-42.56-61t-14-78.76q0-99.09,66.06-158.16t193.09-59.07q66,0,112.43,12.7t75.59,26.68q34.3,16.53,57.17,38.11l-68.6,102.9a241.42,241.42,0,0,0-47-31.76q-22.86-11.43-55.89-21.59t-73.69-10.17q-57.16,0-88.29,24.77T1825.35,1599q0,19,7,34.3t23.5,28.58q16.5,13.35,45.1,26t71.77,26.68q64.8,19.06,109.25,42.56t73.05,52.08q28.59,28.59,41.29,63.52t12.7,79.4q0,48.3-16.51,90.83a202.4,202.4,0,0,1-48.91,73.68q-32.4,31.14-81.31,48.91t-115,17.79q-68.61,0-118.78-14.61t-83.21-32.4q-39.39-21.58-66.06-48.27Z"/></g></g></g></svg>DOWNLOAD
+        </div>
+        <div id="table-scroll" class="table-scroll">
+        <div class="table-wrap">
+        <table class="main-table">
+      <thead>
+        <tr>
+          <th class="fixed-side" scope="col">일자</th>
+          <th scope="col"><div>홍콩</div><div>침사추이</div></th>
+          <th scope="col"><div>홍콩</div><div>침사추이</div></th>
+          <th scope="col"><div>홍콩</div><div>침사추이</div></th>
+          <th scope="col"><div>홍콩</div><div>침사추이</div></th>
+          <th scope="col"><div>홍콩</div><div>침사추이</div></th>
+          <th scope="col"><div>홍콩</div><div>침사추이</div></th>
+          <th scope="col"><div>홍콩</div><div>침사추이</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="fixed-side">2021-10-01</th>
+          <td>Cell content<br>
+            test</td>
+          <td><a href="#">Cell content longer</a></td>
+          <td>Cell content</td>
+          <td>Cell contenㅇㅇt</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+        </tr>
+        <tr>
+          <th class="fixed-side">2021-10-02</th>
+          <td>Cell content</td>
+          <td>Cell content longer</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+        </tr>
+        <tr>
+          <th class="fixed-side">2021-10-03</th>
+          <td>Cell content</td>
+          <td>Cell content longer</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+        </tr>
+        <tr>
+          <th class="fixed-side">2021-10-04</th>
+          <td>Cell content</td>
+          <td>Cell content longer</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+        </tr>
+        <tr>
+          <th class="fixed-side">2021-10-05</th>
+          <td>Cell content</td>
+          <td>Cell content longer</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+        </tr>
+        <tr>
+          <th class="fixed-side">2021-10-06</th>
+          <td>Cell content</td>
+          <td>Cell content longer</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+          <td>Cell content</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th class="fixed-side">&nbsp;</th>
+          <td>Footer 2</td>
+          <td>Footer 3</td>
+          <td>Footer 4</td>
+          <td>Footer 5</td>
+          <td>Footer 6</td>
+          <td>Footer 7</td>
+          <td>Footer 8</td>
+        </tr>
+      </tfoot>
+        </table>
+        </div>
+        </div>
+    </div>
+    <footer role="footer" data-include="/include/footer.html"></footer>
+</body>
+</html>

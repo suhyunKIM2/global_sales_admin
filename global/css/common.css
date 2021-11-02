@@ -3,6 +3,9 @@
 @import url(http://fonts.googleapis.com/css?family=Lobster+Two:700italic,700);
 @import url(http://fonts.googleapis.com/css?family=Oswald:300);
 
+
+.login_body{min-width: 100%;}
+body{min-width: 789px;}
 /*pageing ★20210722추가★*/
 .pageing{text-align:center;height:30px;line-height: 30px;padding:2% 0 0;}
 .pageing strong,.pageing a{padding:2px 8px;border:1px solid #999;}
@@ -20,13 +23,13 @@ a{text-decoration:none;color:#000;}
 /*header*/
 .logo_top{width:100%;background:#de0010;padding:5px 0;}
 .logo_top .content_{min-height:auto;    margin: auto;    max-width: 1200px;}
-.logo_s_font{margin-left:5px;color:#000;font-weight: 600;    font-size: 11px;display:block;vertical-align: top;margin-top:-5px;}
+.logo_s_font{margin-left:5px;color:#000;font-weight: 600;    font-size: 11px;display:block;vertical-align: top;margin-top:-3px;}
 .content_{width:100%;margin:38px auto 96px;overflow:auto;min-height: calc(100vh - 225px);}
 .content_ h2{font-size:22px;font-weight:600;letter-spacing: -2px;color: #383838;    margin-bottom: 3%;clear: both;}
 header{width:100%;border-bottom: 5px solid #e6404c;}
 footer{clear:both;width:100%;text-align:center;bottom:0;background:rgb(0 0 0 / 53%); z-index: 1;padding:10px 0;color: #e1e1e1;font-weight: 600;font-size: 12px;z-index: 11;}
 .top_logo{background:#de0010;border-top-left-radius:20px;border-top-right-radius:20px;text-align: center;padding: 1.5% 0;}
-header .top_logo{border-radius:0;max-width:1200px;margin: auto;    text-align: left;background: #fff;    padding: 0 0 0.5%;}
+header .top_logo{border-radius:0;max-width:1200px;width: 96%;margin: auto;    text-align: left;background: #fff;    padding: 0 0 0.5%;}
 header .top_logo .logo_s_font{display:inline-block;margin-top: 22px;margin-left: 0;font-size: 14px;}
 .content_table .ux_info_top{width:100%;text-align:right;}
 .content_table .ux_info_top .select_right_ul{margin:0 0.2%;}
@@ -437,9 +440,72 @@ width:100%;
 .filebox {min-height: 95px;}
 
 /*해외 매출 관리 조회*/
-.select_date{margin-bottom:1%;float:left;}
+.select_date{margin-bottom:1%;float:left;    width: 80%;}
 .select_date select{height:40px;line-height: 40px;border:1px solid #999;font-size:13px;min-width: 100px;}
 .Excel_btn{width:auto;float:right;height:37px;line-height: 37px;background: #107c41;color: #fff;cursor: pointer;padding: 0 2%;}
+.content_table{visibility: hidden;opacity: 0;}
+.content_ table.bid_write_table tr td ul li{display: inline-block;width:48%;text-align: center;}
+.content_ table.bid_write_table tr td ul span{width:20%;text-align: center;}
+input[type="date"], input[type="time"]{width:47%;text-align: center;}
+.input_id,input[name="pwd"], input[name="N_Phone"]{width:30%;}
+.table-scroll {
+    clear: both;
+	position:relative;
+	max-width:1200px;
+	margin:auto;
+	overflow:hidden;
+	border:1px solid #c1bfbf;
+}
+.table-wrap {
+	width:100%;
+	overflow:auto;
+}
+.content_table .table-scroll table {
+	width:100%;
+	margin:auto;
+	border-collapse:separate;
+	border-spacing:0;
+    padding:0;
+}
+.content_table .table-scroll th,.content_table .table-scroll td {
+	padding:0;
+	white-space:nowrap;
+    min-width: 100px;
+    color: #444;
+    font-size: 14px;
+}
+.content_table .table-scroll th{height:40px;background:#fff9f1;}
+.table-scroll thead, .table-scroll tfoot {
+	background:#f4feff;
+}
+.clone {
+	position:absolute;
+	top:0;
+	left:0;
+	pointer-events:none;
+}
+.clone th, .clone td {
+	visibility:hidden
+}
+.clone td, .clone th {
+	border-color:transparent
+}
+.clone tbody th {
+	visibility:visible;
+	color:red;
+}
+.clone .fixed-side {
+	border:1px solid #dfdfdf;
+	background:#fbfbfb !important;
+	visibility:visible;
+    color:#3F3F3F;
+}
+.clone thead, .clone tfoot{background:transparent;}
+.main-table tr th div{padding:3% 0;}
+.main-table tr th div:last-child{border-top:1px solid #c1bfbf;font-weight: 600;}
+.content_ table .today th,.content_ table .today td{background:#fffae1;font-weight:600;}
+.content_ table .accent_color th,.content_ table .accent_color td{background:#e1f0ff !important;color: #002f5e !important;font-weight:600;}
+.table-scroll tfoot th,.table-scroll tfoot td{color:#626262  !important;font-weight:600;}
 
 @media screen and (max-width: 1540px) {
 .log_in_input_box{width:38%;height:75%;}

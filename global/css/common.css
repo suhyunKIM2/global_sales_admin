@@ -5,7 +5,7 @@
 
 
 .login_body{min-width: 100%;}
-body{min-width: 789px;}
+body{min-width: 789px;font-family: sans-serif;}
 /*pageing ★20210722추가★*/
 .pageing{text-align:center;height:30px;line-height: 30px;padding:2% 0 0;}
 .pageing strong,.pageing a{padding:2px 8px;border:1px solid #999;}
@@ -37,7 +37,7 @@ header .top_logo .logo_s_font{display:inline-block;margin-top: 22px;margin-left:
 .ux_info_top ul li{display: inline-block;cursor: pointer;font-weight: 600;font-size:13px;}
 .ux_info_top ul li:nth-child(2){cursor:default;font-weight: 500;font-size: 100%;}
 .ux_info_top .select_right_ul li{font-size:100%; min-width: 12%;}
-.ux_info_top .select_right_ul select{border:1px solid #999;height:40px;line-height: 40px;width:100%;    font-size: 13px;}
+.ux_info_top .select_right_ul select{border:1px solid #999;height:40px;line-height: 40px;width:100%;    font-size: 13px;padding-left:15px;}
 .ux_info_top .select_right_ul select span{font-weight:600;}
 
 /*로그인페이지*/
@@ -441,13 +441,9 @@ width:100%;
 
 /*해외 매출 관리 조회*/
 .select_date{margin-bottom:1%;float:left;    width: 80%;}
-.select_date select{height:40px;line-height: 40px;border:1px solid #999;font-size:13px;min-width: 100px;}
+.select_date select{height:40px;line-height: 40px;border:1px solid #999;font-size:13px;min-width: 100px;padding-left: 15px;}
 .Excel_btn{width:auto;float:right;height:37px;line-height: 37px;background: #107c41;color: #fff;cursor: pointer;padding: 0 2%;}
 .content_table{visibility: hidden;opacity: 0;}
-.content_ table.bid_write_table tr td ul li{display: inline-block;width:48%;text-align: center;}
-.content_ table.bid_write_table tr td ul span{width:20%;text-align: center;}
-input[type="date"], input[type="time"]{width:47%;text-align: center;}
-.input_id,input[name="pwd"], input[name="N_Phone"]{width:30%;}
 .table-scroll {
     clear: both;
 	position:relative;
@@ -506,6 +502,7 @@ input[type="date"], input[type="time"]{width:47%;text-align: center;}
 .content_ table .today th,.content_ table .today td{background:#fffae1;font-weight:600;}
 .content_ table .accent_color th,.content_ table .accent_color td{background:#e1f0ff !important;color: #002f5e !important;font-weight:600;}
 .table-scroll tfoot th,.table-scroll tfoot td{color:#626262  !important;font-weight:600;}
+.main-table tbody th,.main-table tbody td{height:33px !important;line-height: normal !important;}
 
 @media screen and (max-width: 1540px) {
 .log_in_input_box{width:38%;height:75%;}

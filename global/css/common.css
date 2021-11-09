@@ -291,7 +291,10 @@ header .top_logo .logo_s_font{display:inline-block;margin-top: 22px;margin-left:
     display:inline-block;
     width:15px;
     height:15px;
-    position:absolute;
+    /*S: 20211109 수정 ---------------*/
+    position:relative;
+    vertical-align: middle;
+    /*E: 20211109 수정 ---------------*/
     top:0;
     left:0;
 /*
@@ -313,10 +316,11 @@ header .top_logo .logo_s_font{display:inline-block;margin-top: 22px;margin-left:
     font-size:15px;
     font-weight:800;
     color:#fff;
-    background:#999;
+    background:#de0010;/*S: 20211109 수정 ---------------*/  
     text-align:center;
     line-height:15px;
-    border: 1px solid #9c9c9c;
+    border: 1px solid #de0010;/*S: 20211109 수정 ---------------*/  
+
 }
 .content_ table.bid_table{font-size:13px;height:auto;}
 .content_ table.bid_table th{font-size:15px;font-weight: 600;}
